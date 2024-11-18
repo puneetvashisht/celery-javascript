@@ -3,12 +3,26 @@
     <title>Basic HTML Page</title>
 </head>
 <body>
+    <h1></h1>
     <h2 id="content">Some Content -- change</h2>
     <button onclick="show()">Show</button>
     <button onclick="reverse()">Reverse</button>
     <script>
         function show() {
             console.log('show function invoked')
+            
+            // var gettdate = dat.getDate();
+            // var gettmonth = dat.getMonth();
+            // var gettyear = dat.getFullYear();
+            // console.log('Date :' + gettdate + '/' + gettmonth + '/' + gettyear);
+            // document.getElementsByTagName('h1')[0].innerHTML = 'Date :' + gettdate + '/' + gettmonth + '/' + gettyear;
+
+            setInterval(function(){
+                var dat = new Date();
+                var dateStr = `Date : ${dat.getDate()}/${dat.getMonth()}/${dat.getFullYear()} ${dat.getHours()}:${dat.getMinutes()}:${dat.getSeconds()}`
+                document.getElementsByTagName('h1')[0].innerHTML = dateStr
+            }, 1000)
+           
         }
 
         function reverse() {
