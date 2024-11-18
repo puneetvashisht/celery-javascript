@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Basic HTML Page</title>
+</head>
+<body>
+    <h2 id="content">Some Content -- change</h2>
+    <button onclick="show()">Show</button>
+    <button onclick="reverse()">Reverse</button>
+    <script>
+        function show() {
+            console.log('show function invoked')
+        }
+
+        function reverse() {
+            console.log('reverse function invoked')
+            var str = document.getElementsByTagName('h2')[0].innerText
+            console.log(str)
+            var revStr = str.split('').reverse().join('')
+            document.getElementsByTagName('h2')[0].innerText = revStr
+        }
+    </script>
+</body>
+</html>
