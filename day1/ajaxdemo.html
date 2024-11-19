@@ -15,15 +15,31 @@
 
         //asynchronous (AJAX) based on promises
 
-        fetch('https://api.restful-api.dev/objects')
-        .then(res => res.json())
-        .then(products=> {
-            var productNames = products.map(function(p, i){
-            return `<li>${p.name}</li>`
-            })
-            console.log(productNames)
-            document.getElementById('products').innerHTML = productNames.join('')
-        });
+        // fetch('https://api.restful-api.dev/objects')
+        // .then(res => res.json())
+        // .then(products => {
+        //     var productNames = products.map(function(p, i){
+        //     return `<li>${p.name}</li>`
+        //     })
+        //     console.log(productNames)
+        //     document.getElementById('products').innerHTML = productNames.join('')
+        // });
+
+        async function fetchAPIData(){
+            try {
+                const response = await fetch('https://api.restful-api.dev/objects')
+                const data = await response.json();
+                
+                var productNames = data.map(function(p, i){
+                    return `<li>${p.name}</li>`
+                })
+                document.getElementById('products').innerHTML = productNames.join('')
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        fetchAPIData()
 
         
     </script>

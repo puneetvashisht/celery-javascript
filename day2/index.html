@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Sync vs Async</title>
+</head>
+<body>
+    <h2>Most Popular product</h2>
+    <p id="pproduct">---- Print here ----</p>
+    <button onclick="fetchProduct()">Fetch Product</button>
+    <script>
+        // var product = {id: 23, name: "Iphone"}
+
+        // Synchronous fetch
+        // function fetchProduct(){
+        //     console.log("Fetching product...")
+        //     document.getElementById('pproduct').innerText = `Product: ${product.name}`
+        // }
+
+        // ASynchronous fetch
+        async function fetchProduct(){
+            console.log("Fetching product...")
+
+            //await 
+            const res = await fetch('https://api.restful-api.dev/objects')
+            const products = await res.json()
+            const product = products[0];
+            document.getElementById('pproduct').innerText = `Product: ${product.name}`
+            
+            // promises
+            // fetch('https://api.restful-api.dev/objects')
+            // .then(res => res.json())
+            // .then(products => {
+            //     const product = products[1];
+            //     document.getElementById('pproduct').innerText = `Product: ${product.name}`
+            // })
+
+            
+        }
+
+
+    </script>
+</body>
+</html>
