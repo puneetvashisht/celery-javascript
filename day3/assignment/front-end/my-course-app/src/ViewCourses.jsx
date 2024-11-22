@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
 
-function ViewCourses(){
+// function ViewCourses(){
+const ViewCourses = () =>{
 
     const [courses, setCourses] = useState([])
     useEffect(() => {
@@ -14,7 +15,7 @@ function ViewCourses(){
     console.log(coursesList)
     return (
         <>
-            <h2>Display Courses</h2>
+            <h2>Display Courses Change</h2>
             <ul>
                 {coursesList}
             </ul>
