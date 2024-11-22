@@ -1,3 +1,5 @@
 
 1. Fake server and expose endpoints (course/product)
+    json-server --watch db.json --port 8080
 2. Javascript/Jquery client - display bootstrap table 
+    fetch("http://localhost:8080/courses")
