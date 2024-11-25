@@ -55,3 +55,6 @@ class Manager extends Employee{
         this.salary = salary;
     }
 }
+
+let mng1 = new Manager( "Ravi",  34,  "IT",  34334.34);
+console.log(mng1);

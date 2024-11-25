@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>Products Display</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body onload="loadProducts()">
+    <div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" >Product Name</span>
+            <input id="basic-addon1" type="text" class="form-control" placeholder="Enter Product Name" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" >Product Price</span>
+            <input id="basic-addon2" type="number" class="form-control" placeholder="Enter Product Price" aria-label="Username" aria-describedby="basic-addon2">
+          </div>
+          <button class="btn btn-primary" onclick="addProduct()">Add Product</button>
+
+
+          <hr/>
+
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+             <!-- Dynamically load data -->
+            </tbody>
+          </table>
+    </div>
+
+    <script>
+        var products = [];
+
+        function addProduct(){
+            var name = document.getElementById('basic-addon1').value;
+            var price = document.getElementById('basic-addon2').value;
+
+            console.log(name, price);
+            
+
+            if(name && price){
+                var product = {
+                    name: name,
+                    price: price
+                };
+
+
+                fetch('http://localhost:3000/products', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(product)
+                })
+                .then(res => {
+                    if(res.status = 201){
+                        loadProducts();
+                    } else {
+                        alert('Failed to add product');
+                    }
+                })
+
+                // products.push(product);
+                // displayProducts();
+
+                // document.getElementById('basic-addon1').value = '';
+                // document.getElementById('basic-addon2').value = '';
+            } else {
+                alert('Please enter valid product name and price');
+            }
+        }
+
+        function loadProducts() {
+            fetch('http://localhost:3000/products')
+               .then(response => response.json())
+               .then(data => {
+                    products = data;
+                    displayProducts();
+                })
+               .catch(error => console.error('There has been a problem with your fetch operation:', error));
+        }
+
+        function displayProducts() {
+            var tableBody = document.querySelector('tbody');
+            tableBody.innerHTML = '';
+
+            products.forEach((product, index) => {
+                var row = document.createElement('tr');
+                row.innerHTML = `
+                    <th scope="row">${index + 1}</th>
+                    <td>${product.id}</td>
+                    <td>${product.name}</td>
+                    <td>${product.price}</td>
+                    <td><button onclick="deleteProduct(${product.id})" class="btn btn-danger">X</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function deleteProduct(id){
+
+            console.log("Delete the product" + id);
+            fetch("http://localhost:3000/products/" + id, {
+                method: 'DELETE'
+            })
+            .then(res => {
+                console.log(res.status);
+                if(res.status === 200){
+                    console.log("Product deleted successfully");
+                } else {
+                    console.log("Failed to delete product");
+                }
+            })
+
+            var productId = arguments[0];
+            var index = products.findIndex(product => product.id === productId);
+
+            if(index > -1){
+                products.splice(index, 1);
+                displayProducts();
+            }
+        }
+    </script>
+</body>
+</html>
