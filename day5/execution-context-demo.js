@@ -35,7 +35,7 @@
 function b(){
     let myVar = 10
     console.log(myVar);
-    
+    console.log(this); 
 }
 
 function a(){

@@ -1,4 +1,4 @@
-class Employee{
+class Employee extends Object{
     constructor(name, age, department){
         this._name = name;
         this.age = age;
