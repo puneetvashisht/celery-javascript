@@ -48,7 +48,7 @@ const ViewProducts = () => {
         })
             .then(res => {
                 console.log(res.status);
-                if (res.status === 200) {
+                if (res.status === 204) {
                     console.log("Product deleted successfully");
                     const updatedProducts = products.filter(product => product.id !== id);
                     setProducts(updatedProducts);
@@ -66,7 +66,7 @@ const ViewProducts = () => {
             <td>{product.name}</td>
             <td>{product.price}</td>
             <td>{product.category}</td>
-            <td><button onClick={() => deleteProduct(product.id)} className="btn btn-danger">X</button></td>
+            <td><button onClick={() => deleteProduct(product._id)} className="btn btn-danger">X</button></td>
         </tr>
     ))
 

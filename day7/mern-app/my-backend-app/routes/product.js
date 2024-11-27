@@ -46,12 +46,14 @@ router.post('/', async (req, res)=> {
 //     res.json(updatedProduct)
 // })
 
-// router.delete('/:id', (req, res)=> {
-//     const productIndex = products.findIndex(p => p.id === parseInt(req.params.id)   )
-//     if (productIndex === -1) return res.status(404).send('Product not found')
-
-//     products.splice(productIndex, 1)
-//     res.sendStatus(204)
-// })
+router.delete('/:id', async (req, res)=> {
+    try {
+        await Product.deleteOne({_id: req.params.id})
+    }
+    catch(err){
+        return res.status(404).send('Product not found')
+    }
+    res.sendStatus(204)
+})
 
 module.exports = router
