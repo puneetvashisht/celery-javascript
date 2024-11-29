@@ -1,8 +1,10 @@
 
 const Employee = require('../schemas/employee')
 
-const getEmployees = (req, res) => {
-    res.send('Fetch employee!')
+const getEmployees = async(req, res) => {
+    // res.send('Fetch employee!')
+    const employees =  await Employee.find();
+    res.json(employees)
 }
 
 

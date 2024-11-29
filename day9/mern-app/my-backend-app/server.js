@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const employee = require('./routes/employee')
 const mongoose = require('mongoose');
+const cors = require('cors')
 
 const port = 3000
 
@@ -12,6 +13,7 @@ async function connectToDb(){
   }
   
   connectToDb();
+app.use(cors())
 app.use(express.json())
 app.use('/api/v1/employees' , employee);
 
