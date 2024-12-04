@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
-const ViewCourses = () => {
+const ViewCourses = (props) => {
 
 
-    const [courses, setCourses] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/courses')
-           .then(response => response.json())
-           .then(data => setCourses(data))
-    }, [])
+    // const [courses, setCourses] = useState([])
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/courses')
+    //        .then(response => response.json())
+    //        .then(data => setCourses(data))
+    // }, [])
 
     const deleteCourse = (id) => {
-        fetch(`http://localhost:3000/courses/${id}`, {
-            method: 'DELETE',
-        })
-       .then(() => {
-         const updatedCourses = courses.filter(course => course.id!== id)
-         setCourses(updatedCourses)
-       })
-       .catch(error => console.error('Error:', error))
+
+        props.onCourseDelete(id);
+    //     fetch(`http://localhost:3000/courses/${id}`, {
+    //         method: 'DELETE',
+    //     })
+    //    .then(() => {
+    //      const updatedCourses = courses.filter(course => course.id!== id)
+    //      setCourses(updatedCourses)
+    //    })
+    //    .catch(error => console.error('Error:', error))
     }
 
 
-    let coursesList = courses.map((course, i)=> {
+    let coursesList = props.courses.map((course, i)=> {
         return (
             <tr key={i}>
                 <th scope="row">{i+1}</th>
@@ -55,4 +58,15 @@ const ViewCourses = () => {
         </>
     )
 }
-export default ViewCourses;
+
+
+const mapDispatchToProps = dispatch => ({
+    // dispatch actions here
+    onCourseDelete: (id) => dispatch({type: 'DELETE_COURSE', payload: id})
+})
+
+const mapStateToProps = state => ({
+    courses: state.courses
+})
+// export default ViewCourses;
+export default connect(mapStateToProps, mapDispatchToProps)(ViewCourses);

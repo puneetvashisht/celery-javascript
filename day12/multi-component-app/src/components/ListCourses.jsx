@@ -1,24 +1,25 @@
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
 
-const ListCourses = () => {
+const ListCourses = (props) => {
 
 
-    const [courses, setCourses] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:3000/courses')
-           .then(response => response.json())
-           .then(data => setCourses(data))
-    }, [])
+    // const [courses, setCourses] = useState([])
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/courses')
+    //        .then(response => response.json())
+    //        .then(data => setCourses(data))
+    // }, [])
 
    
-    let listSortedCourses = courses.sort((course1, course2)=>course2.votes - course1.votes);
+    let listSortedCourses = props.courses.sort((course1, course2)=>course2.votes - course1.votes);
     console.log(listSortedCourses);
 
-    let topThreeCourses = courses.slice(0,3)
+    let topThreeCourses = listSortedCourses.slice(0,3)
     
     let coursesList = topThreeCourses.map((course, i)=> {
         return (
-            <li class="list-group-item">{course.title} - {course.votes}</li>
+            <li key={i} className="list-group-item">{course.title} - {course.votes}</li>
         )
     })
     
@@ -26,10 +27,17 @@ const ListCourses = () => {
     return (
         <>
         <h2>List Courses</h2>
-            <ul class="list-group">
+            <ul className="list-group">
                 {coursesList}
             </ul>
         </>
     )
 }
-export default ListCourses;
+
+
+const mapStateToProps = state => ({
+    courses: state.courses
+})
+// export default ListCourses;
+// connect
+export default connect(mapStateToProps)(ListCourses);
