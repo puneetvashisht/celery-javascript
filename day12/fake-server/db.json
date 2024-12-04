@@ -1,0 +1,40 @@
+{
+  "courses": [
+    {
+      "id": "2",
+      "title": "NodeJS",
+      "description": "NodeJS for back-end-app built on Google V8 Engine!",
+      "votes": 23
+    },
+    {
+      "id": "3",
+      "title": "Angular",
+      "description": "Front-end framework from Google!",
+      "votes": 444
+    },
+    {
+      "id": "4",
+      "title": "NodeJS",
+      "description": "NodeJS for back-end-app built on Google V8 Engine!",
+      "votes": 234
+    },
+    {
+      "id": "5",
+      "title": "NodeJS",
+      "description": "NodeJS for back-end-app built on Google V8 Engine!",
+      "votes": 2
+    },
+    {
+      "id": "6",
+      "title": "NodeJS",
+      "description": "NodeJS for back-end-app built on Google V8 Engine!",
+      "votes": 123
+    },
+    {
+      "id": "7",
+      "title": "NodeJS",
+      "description": "NodeJS for back-end-app built on Google V8 Engine!",
+      "votes": 223
+    }
+  ]
+}
