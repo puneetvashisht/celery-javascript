@@ -1,28 +1,24 @@
 import React from 'react';
 
 import classes from './Navigation.module.css';
-import {useUser} from '../../UserContext'
 
-const Navigation = () => {
-
-  const {isLoggedIn, logout} = useUser();
-
+const Navigation = (props) => {
   return (
     <nav className={classes.nav}>
       <ul>
-        {isLoggedIn && (
+        {props.isLoggedIn && (
           <li>
             <a href="/">Users</a>
           </li>
         )}
-        {isLoggedIn && (
+        {props.isLoggedIn && (
           <li>
             <a href="/">Admin</a>
           </li>
         )}
-        {isLoggedIn && (
+        {props.isLoggedIn && (
           <li>
-            <button onClick={logout}>Logout</button>
+            <button onClick={props.onLogout}>Logout</button>
           </li>
         )}
       </ul>
