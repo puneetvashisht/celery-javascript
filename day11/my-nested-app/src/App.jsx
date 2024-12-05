@@ -5,29 +5,20 @@ import './App.css'
 import Home from './components/Home/Home'
 import Login from './components/Login/Login'
 import MainHeader from './components/MainHeader/MainHeader'
+import { UserProvider } from './UserContext'
 
-function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+const App= () => {
 
-  const loginHandler = (email, password) => {
-    console.log({email, password});
-    setIsLoggedIn(true);
-    
-  }
-
-  const logoutHandler = () => {
-    setIsLoggedIn(false)
-  }
 
   return (
-    <>
-    <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler}></MainHeader>
-    <main>
-      {!isLoggedIn && <Login onLogin={loginHandler}></Login>}
-      {isLoggedIn &&<Home></Home>}
-    </main>
+    <UserProvider>
+      <MainHeader></MainHeader>
+      <main>
+        {!isLoggedIn && <Login onLogin={loginHandler}></Login>}
+        {isLoggedIn &&<Home></Home>}
+      </main>
     
-    </>
+    </UserProvider>
   )
 }
 
