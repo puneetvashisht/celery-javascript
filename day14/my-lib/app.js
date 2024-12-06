@@ -1,3 +1,5 @@
-var p = T$("Puneet", "Japanese")
+var p = T$("Puneet", "jp")
 console.log(p)
-p.sayHello()
+p.validate();
+console.log(p.sayHello())
+console.log(p.greeting())
