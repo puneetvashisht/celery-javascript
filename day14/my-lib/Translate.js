@@ -1,4 +1,4 @@
-;(function(global){
+;(function(global, $){
 
     var  Translate = function(name, language){
         // this.name = name;
@@ -41,6 +41,18 @@
                 console.log(this.language +  ' ' + this.name);
             }
             return this;
+        },
+
+        HTMLGreeting: function(selector){
+            if(!$){
+                throw 'jQuery not loaded'
+            }
+            if(!selector){
+                throw 'Missing selector!'
+            }
+
+            $(selector).html(this.greeting())
+            return this;
         }
 
     }
@@ -55,4 +67,4 @@
 
     global.Translate = global.T$ = Translate;
 
-}(window));
+}(window, jQuery));
