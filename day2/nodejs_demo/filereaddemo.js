@@ -5,21 +5,6 @@ import {open} from 'node:fs/promises'
 
 console.log('starting...')
 
-//synchronous call
-// const fileContent = readFileSync('./dummy.txt');
-// console.log("Contents: "+fileContent);
-
-//async with calllbacks 
-// readFile('./dummy.txt', function(err, data) {
-//   if (err) throw err;
-//   console.log("Contents: "+data);
-// });
-
-// async with promises
-// open('./dummy.txt')
-//  .then(fileHandle => fileHandle.readFile('utf8'))
-//  .then(data => console.log("Contents: "+data))
-//  .catch(error => console.log(error))
 
 // async with async/await
 async function readFromFileAsync() {
@@ -37,3 +22,5 @@ readFromFileAsync();
 
 
 console.log('ending...')
+
+module.exports = {readFromFileAsync}
