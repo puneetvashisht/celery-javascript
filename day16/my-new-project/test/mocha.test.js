@@ -19,7 +19,7 @@ describe('Test Mocha Fakes (spy, stubs, mocks)', ()=>{
         
     })
 
- // replacement to existing function
+ // replacement to existing function and can return dummy/hard-coded responses
     it('Stub test', ()=> {
         const stub = sinon.stub().returns('Dummy value');
         console.log(stub());
@@ -28,7 +28,7 @@ describe('Test Mocha Fakes (spy, stubs, mocks)', ()=>{
     })
 
 
-// mock
+// mock .. enhancement on stubs . .
     it('Mock test', ()=> {
         
         
