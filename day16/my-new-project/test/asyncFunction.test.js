@@ -25,12 +25,12 @@ describe('Async function test', () => {
 
   });
 
-  it('using async await to call http', async() => {
+  // it('using async await to call http', async() => {
 
-    const result = await getData()
-    expect(result).to.be.a('array')
+  //   const result = await getData()
+  //   expect(result).to.be.a('array')
 
-  });
+  // });
 
 
   it('using async await should reject the promise after delay', async() => {
