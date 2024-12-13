@@ -1,2 +1,8 @@
+<h2>{{today | date : 'short'| uppercase}}</h2>
 <p>list-messages works!</p>
-<p>{{messages}}</p>
+<p>{{messageService.messages | searchMessages:'test'}}</p>
+
+<input type="search" #search (keyup)="0"/>
+<ul>
+    <li *ngFor="let message of messageService.messages | searchMessages: search.value">{{message | uppercase}}</li>
+</ul>
