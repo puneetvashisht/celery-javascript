@@ -1,7 +1,7 @@
 // Common JS
-const greet = require('./greet')
+// const greet = require('./greet.js')
 // ESM
-// import greet from './greet'
+import greet from './greet'
 
 console.log('index.js');
 console.log('starting..');
