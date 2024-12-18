@@ -1,0 +1,16 @@
+body{
+    background: lightskyblue;
+    margin: 20px;
+    padding: 20px;
+}
+
+:local(.box){
+	background-color: white;
+    text-align: center;
+    /*font-size: 2em;*/
+    text-shadow: 5px 5px 5px saddlebrown;
+	padding: 1em;
+	margin: 1em;
+	border: 1px solid cornflowerblue;
+	border-radius: 5px;
+}
