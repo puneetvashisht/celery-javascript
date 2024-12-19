@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { EmployeeService } from '../../services/employee.service';
 import { NgFor } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-view-employees',
-  imports: [NgFor],
+  imports: [NgFor, MatButtonModule, MatDividerModule, MatIconModule],
   templateUrl: './view-employees.component.html',
   styleUrl: './view-employees.component.css'
 })
