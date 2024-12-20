@@ -6,9 +6,12 @@ import App from './App.jsx'
 import { createStore } from 'redux'
 import courseReducer from './store/reducer.js'
 import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension' 
 
+const composedEnhancer = composeWithDevTools()
 
-const store = createStore(courseReducer)
+const store = createStore(courseReducer, composedEnhancer)
+
 
 createRoot(document.getElementById('root')).render(
   <Provider store={store} >

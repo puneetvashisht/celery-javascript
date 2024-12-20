@@ -1,0 +1,72 @@
+{
+  message: 'Connection problem with DB',
+  level: 'error',
+  label: 'MY-BACKEND-APP',
+  timestamp: 'Dec-20-2024 09:29:06'
+}
+{
+  stringValue: '"123"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '123',
+  path: '_id',
+  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+      at new ObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\bson\lib\bson.cjs:2528:23)
+      at castObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at SchemaObjectId.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schema\objectId.js:248:12)
+      at SchemaType.applySetters (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1236:12)
+      at SchemaType.castForQuery (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1653:17)
+      at cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast.js:390:32)
+      at Query.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4906:12)
+      at Query._castConditions (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2309:10)
+      at model.Query._findOne (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2632:8)
+      at model.Query.exec (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4458:80),
+  valueType: 'string',
+  level: 'error',
+  label: 'MY-BACKEND-APP',
+  timestamp: 'Dec-20-2024 09:37:50'
+}
+{
+  stringValue: '"123"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '123',
+  path: '_id',
+  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+      at new ObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\bson\lib\bson.cjs:2528:23)
+      at castObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at SchemaObjectId.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schema\objectId.js:248:12)
+      at SchemaType.applySetters (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1236:12)
+      at SchemaType.castForQuery (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1653:17)
+      at cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast.js:390:32)
+      at Query.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4906:12)
+      at Query._castConditions (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2309:10)
+      at model.Query._findOne (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2632:8)
+      at model.Query.exec (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4458:80),
+  valueType: 'string',
+  level: 'error',
+  label: 'MY-BACKEND-APP',
+  timestamp: 'Dec-20-2024 09:50:01'
+}
+{
+  stringValue: '"123"',
+  messageFormat: undefined,
+  kind: 'ObjectId',
+  value: '123',
+  path: '_id',
+  reason: BSONError: input must be a 24 character hex string, 12 byte Uint8Array, or an integer
+      at new ObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\bson\lib\bson.cjs:2528:23)
+      at castObjectId (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast\objectid.js:25:12)
+      at SchemaObjectId.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schema\objectId.js:248:12)
+      at SchemaType.applySetters (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1236:12)
+      at SchemaType.castForQuery (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\schemaType.js:1653:17)
+      at cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\cast.js:390:32)
+      at Query.cast (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4906:12)
+      at Query._castConditions (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2309:10)
+      at model.Query._findOne (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:2632:8)
+      at model.Query.exec (D:\work\trainings\celery-javascript\day24\my-backend-app\node_modules\mongoose\lib\query.js:4458:80),
+  valueType: 'string',
+  level: 'error',
+  label: 'MY-BACKEND-APP',
+  timestamp: 'Dec-20-2024 09:50:35'
+}
