@@ -1,0 +1,13 @@
+<div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" [(ngModel)]="username" />
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" [(ngModel)]="password" />
+  </div>
+  <button type="submit" id="login-button" (click)="login()" name="login-button">Login</button>
+  <div *ngIf="error">
+    <p style="color: red;" id="error-message"> *Invalid username or password</p>
+  </div>
+  

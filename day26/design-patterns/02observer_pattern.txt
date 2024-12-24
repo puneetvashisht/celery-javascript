@@ -1,0 +1,6 @@
+Purpose:
+The Observer Pattern is used to establish a subscription mechanism, where observers (subscribers) get notified of state changes in a subject (publisher).
+
+Key Features:
+Useful for event-driven programming (e.g., UI updates, notifications).
+Implements the Publisher-Subscriber model.

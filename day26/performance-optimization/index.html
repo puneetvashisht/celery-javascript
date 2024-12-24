@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <input type="text" id="searchBox">
+
+        <script>
+        function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
+  
+  // Usage
+  const handleInput = debounce((text) => {
+    console.log("Search for:", text);
+  }, 300);
+  
+  document.getElementById("searchBox").addEventListener("input", (event) => {
+    handleInput(event.target.value);
+  });
+        </script>
+    </body>
+</html>

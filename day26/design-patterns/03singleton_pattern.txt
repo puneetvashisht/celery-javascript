@@ -1,0 +1,6 @@
+Purpose:
+The Singleton Pattern ensures that a class has only one instance and provides a global access point to it.
+
+Key Features:
+Useful for shared resources like configurations, databases, or state managers.
+Prevents multiple instantiations.

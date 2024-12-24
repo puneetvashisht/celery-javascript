@@ -11,6 +11,10 @@ export class MessageService {
 
   }
 
+  addMessage(message: string){
+    this.messages.push(message)
+  }
+
   fetchMessages(){
     this.httpClient.get('http://localhost:3000/messages')
     

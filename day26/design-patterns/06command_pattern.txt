@@ -1,0 +1,6 @@
+Purpose:
+The Command Pattern is used to encapsulate a request as an object, allowing users to parameterize and queue requests or undo actions.
+
+Key Features:
+Encapsulates commands for reuse and undo/redo functionality.
+Supports actions like logging and scheduling commands.

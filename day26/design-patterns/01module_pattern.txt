@@ -1,0 +1,6 @@
+Purpose:
+The Module Pattern is used to encapsulate code and create private and public members. It helps to organize code into reusable and maintainable pieces.
+
+Key Features:
+Uses closures to maintain private variables and methods.
+Exposes a public API for interaction.

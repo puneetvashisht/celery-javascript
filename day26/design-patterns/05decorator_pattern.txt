@@ -1,0 +1,6 @@
+Purpose:
+The Decorator Pattern allows you to dynamically add behaviors or responsibilities to objects without modifying their structure.
+
+Key Features:
+Enhances existing objects at runtime.
+Promotes composition over inheritance.

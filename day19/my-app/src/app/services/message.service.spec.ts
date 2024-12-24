@@ -13,4 +13,10 @@ describe('MessageService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('add a message should result in message list size to be 6', ()=>{
+    service.addMessage('Test MEssages')
+    expect(service.messages.length).toBe(6)
+  })
+
 });
